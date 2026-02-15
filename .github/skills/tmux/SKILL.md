@@ -215,6 +215,14 @@ tmux -S "$SOCKET" kill-server
 git worktree remove ../repo-agent-a
 ```
 
+## References
+
+For tmux fundamentals beyond this workflow guide, see [references/fundamentals.md](references/fundamentals.md):
+- Session/window/pane structure and targeting
+- Window and pane management (splits, resize)
+- Advanced capture-pane and scrollback configuration
+- Environment variables and troubleshooting
+
 ## Notes
 
 - tmux supports macOS/Linux natively. On Windows, use WSL.

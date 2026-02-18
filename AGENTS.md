@@ -97,6 +97,11 @@ vibes/
 ├── .claude/                           # Claude Code platform directory
 │   ├── skills → ../.github/skills     # Symlink
 │   ├── agents → ../.github/agents     # Symlink
+│   ├── hooks/                         # Session lifecycle scripts
+│   │   ├── backup-transcript.sh       # PreCompact transcript backup
+│   │   ├── check-frontmatter.sh       # PostToolUse frontmatter validation
+│   │   └── check-symlinks.sh          # PostToolUse symlink integrity
+│   ├── settings.json                  # Project hooks config (shareable)
 │   ├── references/                    # Knowledge docs (mixed)
 │   │   ├── context-engineering.md → ../../.github/docs/context-engineering.md
 │   │   ├── best-practices.md → ../../.github/docs/best-practices.md
@@ -138,6 +143,7 @@ vibes/
 - **`.github/docs/`** holds platform-agnostic reference docs (context engineering, best practices, TDD)
 - **`.claude/references/`** holds Claude-specific knowledge + symlinks to agnostic docs from `.github/docs/`
 - **`.claude/rules/`** holds path-specific authoring rules for Claude Code (`paths:` frontmatter)
+- **`.claude/hooks/`** contains session lifecycle scripts configured via `.claude/settings.json`
 - **`.github/instructions/`** holds scoped instruction files for GitHub Copilot (`applyTo:` frontmatter)
 - **`.agents/skills/`** is the Codex-native skills discovery path (symlinked to `.github/skills`)
 - **`.codex/config.toml`** configures MCP servers, approval policy, and sandbox mode for Codex CLI

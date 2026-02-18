@@ -88,7 +88,7 @@ graph TD
     AGENTS -->|reads natively| CODEX["Codex CLI"]
 
     GH[".github/<br/>skills/ agents/ docs/ instructions/"]
-    GH -->|symlink| CLAUDE_DIR[".claude/<br/>skills/ agents/ references/ rules/"]
+    GH -->|symlink| CLAUDE_DIR[".claude/<br/>skills/ agents/ hooks/ references/ rules/"]
     GH -->|symlink| CODEX_DIR[".codex/<br/>agents/ config.toml"]
     GH -->|symlink| AGENTS_DIR[".agents/<br/>skills/"]
 
@@ -105,6 +105,7 @@ graph TD
 - **Progressive disclosure.** Skill metadata (name + description) is always in context. The SKILL.md body loads on trigger. Reference files load on demand.
 - **Codex uses native surfaces.** Skills are discovered via `.agents/skills/`; runtime policy/config lives under `.codex/` (`config.toml`, `rules/*.rules`).
 - **Platform-specific rules stay separate.** `.claude/rules/` and `.github/instructions/` use their own formats rather than a forced shared one.
+- **This repo's hooks always exit 0.** The three scripts in `.claude/hooks/` use non-blocking warnings (`systemMessage`) rather than exit 2 blocking. Frontmatter and symlink checks warn Claude after edits; transcript backup runs silently on compaction.
 
 ## Reference Documentation
 

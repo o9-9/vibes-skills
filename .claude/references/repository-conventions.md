@@ -90,6 +90,22 @@ Naming and structure conventions for this repository.
     └── memory-patterns.md
 ```
 
+### Hooks
+
+```
+.claude/hooks/
+├── backup-transcript.sh   # PreCompact: transcript backup with rotation
+├── check-frontmatter.sh   # PostToolUse: skill/agent YAML validation
+└── check-symlinks.sh      # PostToolUse: broken symlink detection
+```
+
+**Rules:**
+- Scripts must be executable (chmod +x)
+- Must accept JSON on stdin (Claude Code hook contract)
+- Must exit 0 (non-blocking) — use `systemMessage` for warnings
+- Guard with `command -v jq >/dev/null 2>&1 || exit 0` for soft jq dependency
+- Configured in `.claude/settings.json`
+
 ---
 
 ## What NOT to Include

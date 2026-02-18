@@ -13,3 +13,6 @@ AGENTS.override.md
 *.tmp
 *.bak
 repos
+
+# Hook artifacts
+.claude/backups/

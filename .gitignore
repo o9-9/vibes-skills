@@ -8,6 +8,11 @@ CLAUDE.local.md
 AGENTS.override.md
 .claude/settings.local.json
 
+# Local shell profiles with secrets
+.zshrc.local
+*_profile_local.ps1
+.env.local
+
 # Temporary files
 *.log
 *.tmp

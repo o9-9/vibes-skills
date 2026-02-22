@@ -224,6 +224,19 @@ When: Understanding a GitHub project's architecture or API
 
 ---
 
+## Environment Variables
+
+Skills and MCP servers require API keys. See [Environment Variables Guide](.github/docs/environment-variables.md) for setup.
+
+Required variables:
+
+| Variable | Used By |
+|----------|---------|
+| `CONTEXT7_API_KEY` | Context7 MCP, context7 skills |
+| `AZURE_DEVOPS_PAT` | az-devops skill |
+
+---
+
 ## Clean Code Checklist
 
 Before committing any skill, agent, or documentation change:
